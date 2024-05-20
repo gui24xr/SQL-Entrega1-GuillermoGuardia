@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.8.6"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://example.com/scriptssql/"><!-- Primary Meta Tags --><title>CURSO SQL</title><meta name="title" content="CURSO SQL"><meta name="description" content="CURSO SQL CODERHOUSE"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/scriptssql/"><meta property="og:title" content="CURSO SQL"><meta property="og:description" content="CURSO SQL CODERHOUSE"><meta property="og:image" content="https://example.com/blog-placeholder-1.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://example.com/scriptssql/"><meta property="twitter:title" content="CURSO SQL"><meta property="twitter:description" content="CURSO SQL CODERHOUSE"><meta property="twitter:image" content="https://example.com/blog-placeholder-1.jpg"><link rel="stylesheet" href="/_astro/_slug_.CuDF9i9-.css">
+<style>a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}
+.highlighted-code[data-astro-cid-cy47zuvp]{background-color:#1e1e1e;color:#d4d4d4;white-space:pre-wrap}.hljs-keyword[data-astro-cid-cy47zuvp]{color:#008cff}.highlighted-literal[data-astro-cid-cy47zuvp]{color:#569cd6}.highlighted-built_in[data-astro-cid-cy47zuvp]{color:#dcdcaa}
+</style></head> <body> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>CURSO SQL</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Home </a>  <a href="/description" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Descripcion </a>  <a href="/diagramaer" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> DIAGRAMA ER </a>  <a href="/tables" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Tablas </a>  <a href="/scriptssql" class="active" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg> Scripts </a>  </div> <div class="social-links" data-astro-cid-3ef6ksr2> <a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Astro's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </nav> </header>  <main class="space-y-10"> <h1>🗃️ --CREACION DE TABLAS --</h1> <p>
+En este apartado se muestra el script utilizado para crear nuestra base de datos.
+</p> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css"><div class="highlighted-code bg-gray-900 text-white p-4 mb-4 shadow-md font-mono text-base leading-normal" data-astro-cid-cy47zuvp><span class="hljs-keyword">CREATE</span> DATABASE administracionconsultorios;
+USE administracionconsultorios;
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> roles_usuario_sistema(
+    id_user_rol <span class="hljs-type">INT</span> AUTO_INCREMENT,
+    rol <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_user_rol)
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> roles_empleados(
+    id_funcion <span class="hljs-type">INT</span> AUTO_INCREMENT,
+    funcion <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_funcion)
+);
+
+<span class="hljs-comment">-- Tabla de estados turnos.</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> estados_turnos (
+    id_estado_turno <span class="hljs-type">INT</span>,
+    estado_turno <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_estado_turno)
+);
+
+<span class="hljs-comment">-- Tabla de Prestaciones</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> prestaciones (
+    id_prestacion <span class="hljs-type">INT</span> AUTO_INCREMENT,
+    obra_social <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>),
+    plan <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>),
+    activa <span class="hljs-type">BOOLEAN</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_prestacion)
+);
+
+<span class="hljs-comment">-- Tabla de Consultorios</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> consultorios (
+    numero_consultorio <span class="hljs-type">INT</span>,
+    en_servicio <span class="hljs-type">BOOLEAN</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (numero_consultorio)
+);
+
+<span class="hljs-comment">-- Tabla especialidades</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> especialidades (
+    id_especialidad <span class="hljs-type">INT</span> AUTO_INCREMENT,
+    nombre <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>),
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_especialidad)
+);
+
+<span class="hljs-comment">-- Tabla de Datos Personales</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> datos_personales (
+    dni <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    nombre1 <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>),
+    nombre2 <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>),
+    apellido <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>),
+    fecha_nacimiento <span class="hljs-type">DATE</span>,
+    direccion <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>),
+    codigo_postal <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>),
+    telefono_contacto_1 <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    telefono_contacto_2 <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    telefono_contacto_urgencia <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    email_contacto <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">254</span>),
+    <span class="hljs-keyword">PRIMARY</span> KEY (dni)
+);
+
+
+
+<span class="hljs-comment">-- Tabla de Usuarios del Sistema</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> usuarios_sistema (
+    dni <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    email <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">254</span>),
+    contraseña <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">24</span>),
+    rol <span class="hljs-type">INT</span>,
+    habilitado <span class="hljs-type">BOOLEAN</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (dni),
+    <span class="hljs-keyword">FOREIGN</span> KEY (dni) <span class="hljs-keyword">REFERENCES</span> datos_personales(dni),
+    <span class="hljs-keyword">FOREIGN</span> KEY (rol) <span class="hljs-keyword">REFERENCES</span> roles_usuario_sistema(id_user_rol)
+);
+
+
+<span class="hljs-comment">-- Tabla de Empleados</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> empleados (
+    legajo_empleado <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>),
+    dni <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    id_funcion <span class="hljs-type">INT</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (legajo_empleado),
+    <span class="hljs-keyword">FOREIGN</span> KEY (dni) <span class="hljs-keyword">REFERENCES</span> datos_personales(dni),
+    <span class="hljs-keyword">FOREIGN</span> KEY (id_funcion) <span class="hljs-keyword">REFERENCES</span> roles_empleados(id_funcion)
+ );
+
+ <span class="hljs-comment">-- Tabla de Médicos</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> medicos (
+    legajo_medico <span class="hljs-type">INT</span> AUTO_INCREMENT,
+    dni <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    id_especialidad <span class="hljs-type">INT</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (legajo_medico),
+    <span class="hljs-keyword">FOREIGN</span> KEY (dni) <span class="hljs-keyword">REFERENCES</span> datos_personales(dni),
+    <span class="hljs-keyword">FOREIGN</span> KEY (id_especialidad) <span class="hljs-keyword">REFERENCES</span> especialidades(id_especialidad)
+);
+
+
+<span class="hljs-comment">-- Tabla de Pacientes</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> pacientes (
+    legajo_paciente <span class="hljs-type">INT</span> AUTO_INCREMENT,
+    dni <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    <span class="hljs-keyword">PRIMARY</span> KEY (legajo_paciente),
+    <span class="hljs-keyword">FOREIGN</span> KEY (dni) <span class="hljs-keyword">REFERENCES</span> datos_personales(dni)
+);
+
+
+<span class="hljs-comment">-- Tabla de Ocupación de Consultorios</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> registros_historias_clinicas (
+    id_registro <span class="hljs-type">INT</span> AUTO_INCREMENT,
+    legajo_medico <span class="hljs-type">INT</span>,
+    legajo_paciente <span class="hljs-type">INT</span>,
+    diagnostico TEXT,
+    observaciones TEXT,
+    medicacion TEXT,
+    fecha_hora DATETIME,
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_registro),
+    <span class="hljs-keyword">FOREIGN</span> KEY (legajo_medico) <span class="hljs-keyword">REFERENCES</span> medicos(legajo_medico),
+    <span class="hljs-keyword">FOREIGN</span> KEY (legajo_paciente) <span class="hljs-keyword">REFERENCES</span> pacientes(legajo_paciente)
+);
+
+
+<span class="hljs-comment">-- Tabla de Anuncios en Recepción</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> turnos_otorgados (
+    id_turno <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    legajo_medico <span class="hljs-type">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    legajo_paciente <span class="hljs-type">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    fecha_hora_reservada DATETIME,
+    id_prestacion_tentativa <span class="hljs-type">INT</span>,
+    fecha_hora_otorgamiento DATETIME,
+    dni_otorgante_turno <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    estado_turno <span class="hljs-type">INT</span>,
+    consultorio_asignado <span class="hljs-type">INT</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_turno),
+    <span class="hljs-keyword">FOREIGN</span> KEY (legajo_medico) <span class="hljs-keyword">REFERENCES</span> medicos(legajo_medico),
+    <span class="hljs-keyword">FOREIGN</span> KEY (legajo_paciente) <span class="hljs-keyword">REFERENCES</span> pacientes(legajo_paciente),
+    <span class="hljs-keyword">FOREIGN</span> KEY (id_prestacion_tentativa) <span class="hljs-keyword">REFERENCES</span> prestaciones(id_prestacion),
+    <span class="hljs-keyword">FOREIGN</span> KEY (estado_turno) <span class="hljs-keyword">REFERENCES</span> estados_turnos(id_estado_turno),
+    <span class="hljs-keyword">FOREIGN</span> KEY (consultorio_asignado) <span class="hljs-keyword">REFERENCES</span> consultorios(numero_consultorio)
+);
+
+<span class="hljs-comment">-- Tabla de Ocupación de Consultorios</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> ocupacion_consultorios (
+    id_ocupacion <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>),
+    legajo_medico <span class="hljs-type">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    numero_consultorio <span class="hljs-type">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    fecha_hora_inicio DATETIME <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    fecha_hora_fin DATETIME <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_ocupacion),
+    <span class="hljs-keyword">FOREIGN</span> KEY (legajo_medico) <span class="hljs-keyword">REFERENCES</span> medicos(legajo_medico),
+    <span class="hljs-keyword">FOREIGN</span> KEY (numero_consultorio) <span class="hljs-keyword">REFERENCES</span> consultorios(numero_consultorio)
+);
+
+<span class="hljs-comment">-- Tabla de Anuncios en Recepción</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> registro_visitas_pacientes (
+    id_visita <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">20</span>),
+    id_turno <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>), 
+    consultorio_asignado <span class="hljs-type">INT</span>,
+    prestacion_efectiva <span class="hljs-type">INT</span>,
+    fecha_hora_anuncio DATETIME,
+    fecha_hora_ingreso_consultorio DATETIME,
+    fecha_hora_egreso_consultorio DATETIME,
+    <span class="hljs-keyword">PRIMARY</span> KEY (id_visita),
+    <span class="hljs-keyword">FOREIGN</span> KEY (id_turno) <span class="hljs-keyword">REFERENCES</span> turnos_otorgados(id_turno), 
+    <span class="hljs-keyword">FOREIGN</span> KEY (consultorio_asignado) <span class="hljs-keyword">REFERENCES</span> consultorios(numero_consultorio),
+    <span class="hljs-keyword">FOREIGN</span> KEY (prestacion_efectiva) <span class="hljs-keyword">REFERENCES</span> prestaciones(id_prestacion)
+);
+
+
+
+
+</div> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2024 Curso SQL Coderhouse GUILLERMO GUARDIA.
+<div class="social-links" data-astro-cid-sz7xmlte> <a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Go to Astro's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github" data-astro-cid-sz7xmlte><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-sz7xmlte></path></svg> </a> </div> </footer> 
+s</body></html>
