@@ -1,0 +1,37 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="'space-y-10">
+			<h1>🧑‍🚀 CURSO SQL CODERHOUSE</h1>
+			<p>
+				El presente proyecto se trata de la creacion de una base de datos relaciones para crear la parte backend de un software para la gestion de un consultorio medico mediano. 
+                Entre los objetivos se encuentra:
+                
+                <ul class="list-disc pl-5">
+                    <li>Alumno: Guillermo Guardia.</li>
+                    <li>Comision: 57175.</li>
+                    <li>Fecha Entrega: 20-5/2024</li>
+                    <li>Entrega Numero 1</li>
+                    
+                    
+                </ul>
+			</p>
+
+			<img src="./portada.avif" alt="Descripción de la imagen" class="mx-auto rounded-lg shadow-lg max-w-4x1">
+
+			
+		</main>
+		<Footer />
+	</body>
+</html>

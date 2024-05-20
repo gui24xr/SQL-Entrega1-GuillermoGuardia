@@ -1,0 +1,47 @@
+---
+
+// Using ES6 import syntax
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import xml from 'highlight.js/lib/languages/xml';
+import sql from 'highlight.js/lib/languages/sql'
+
+
+const {codeString} = Astro.props
+
+// Then register the languages you need
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('sql', sql);
+
+const highlightedCode = hljs.highlight(codeString,{ language: 'sql' }).value
+---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+<style>
+   .highlighted-code {
+  background-color: #1e1e1e; /* Fondo oscuro */
+  color: #d4d4d4; /* Texto blanco */
+  white-space: pre-wrap; 
+}
+
+.hljs-keyword {
+  color: #008cff; /* Palabras clave */
+}
+
+.highlighted-literal {
+  color: #569cd6; /* Literales */
+}
+
+.highlighted-built_in {
+  color: #dcdcaa; /* Funciones integradas */
+}
+</style>
+    
+
+<div class="highlighted-code bg-gray-900 text-white p-4 mb-4 shadow-md font-mono text-base leading-normal" set:html={highlightedCode}></div>
+
+
+
+
+    
+

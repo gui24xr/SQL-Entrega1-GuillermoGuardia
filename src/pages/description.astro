@@ -1,0 +1,50 @@
+
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TableItem from '../components/TableItem.astro'
+import TablesList from '../components/TablesList.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { tablas_bd } from '../data/tablas_bd_object.js'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="space-y-10">
+			<h1>🗃️ -- DESCRIPCION DEL PROYECTO --</h1>
+			<p>
+				El presente proyecto se trata de la creacion de una base de datos relaciones para crear la parte backend de un software para la gestion de un consultorio medico mediano. 
+                Entre los objetivos se encuentra:
+                <h3>Entre los objetivos se encuentra: </h3>
+                <ul class="list-disc pl-5">
+                    <li>Crear un sistema que permita otorgar y tener seguimiento de turnos.</li>
+                    <li>Los turnos seran otorgados a travez del sistema ya se por usuarios que sean personal de la empresa o usuarios externos que podran registrarse y tomar turnos.</li>
+                    <li>Tener registo e informacion on line y al alcance sobre pacientes, medicos y empleados.</li>
+                    <li>Tener un registro de historias clinicas on line y actualizado.</li>
+                    <li>Tener informacion sobre las prestaciones en consultas medicas.</li>
+                    <li>Tener informacion acerca del estado de ocupacion y/o mantenimiento de los consultorios.</li>
+                    <li>Tener informacion pasada guardada en general ya sea de datos de pacientes, usos de consultorios, duracion de turno, registro de estadia de pacientes en consultoriors, etc.</li>
+                    
+                </ul>
+			</p>
+
+           
+
+
+
+
+
+
+
+</div>
+
+		</main>
+		<Footer />
+	</body>
+</html>

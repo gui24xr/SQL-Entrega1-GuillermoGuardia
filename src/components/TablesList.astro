@@ -1,0 +1,22 @@
+---
+const {tablas} = Astro.props
+
+---
+
+<div class="mt-2 relative z-10">
+    <p>Cantidad de tablas actual: {tablas.length}</p>
+    <ul class="mt-8 mx-auto max-w-xs text-left font-medium text-lg leading-none border-blue-200 divide-y divide-blue-200"
+        style="display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; padding: 0;">
+        {
+            tablas.map(item => (
+                <li style="margin: 0; padding: 0;">
+                    <a class="py-3.5 w-full flex items-center text-blue-500 hover:text-blue-700 hover:bg-blue-50"
+                        href={'#'+item.tableName}>
+                        <span class="ml-5 mr-2.5 w-1 h-7 bg-blue-500 rounded-r-md"></span>
+                        {item.tableName}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</div>

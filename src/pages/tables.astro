@@ -1,0 +1,48 @@
+
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TableItem from '../components/TableItem.astro'
+import TablesList from '../components/TablesList.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { tablas_bd } from '../data/tablas_bd_object.js'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="space-y-10">
+			<h1>🗃️ -- TABLAS --</h1>
+			<p>
+				En este apartado se detalla y describe la lista de tablas que usaremos en nuestro proyecto, sus claves primareas, foraneas, campos, tipo de datos, relaciones entre ellas y ejemplos de registros.
+			</p>
+
+            <TablesList tablas={tablas_bd}/>
+            
+            <div class="grid grid-cols-1 divide-y">
+
+                {
+                    tablas_bd.map( item => (
+                        <TableItem   infoTable={item} />
+                    ))
+                }
+            </div>
+			
+
+
+
+
+
+
+
+</div>
+
+		</main>
+		<Footer />
+	</body>
+</html>

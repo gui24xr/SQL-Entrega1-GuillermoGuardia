@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import CodigoScript from '../components/CodigoScript.astro'
+import { creatingTablesScript } from '../data/scriptstrings/creatingtables.js';
+
+---
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        
+    </head>
+    <body>
+        <Header />
+        <main class="space-y-10">
+            <h1>🗃️ --CREACION DE TABLAS --</h1>
+			<p>
+				En este apartado se muestra el script utilizado para crear nuestra base de datos.
+			</p>
+          <CodigoScript codeString={creatingTablesScript}/>
+        </main>
+        <Footer />
+    </body>
+</html>s

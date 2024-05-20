@@ -1,0 +1,82 @@
+---
+const {infoTable} = Astro.props
+const {
+    tableName,
+    tableDescription,
+    tableFields,
+    tablePK,
+    tablesFKs
+} = infoTable
+---
+
+<div class="w-full mb-8" id={tableName}>
+
+<p class="text-2x1 font-bold dark:text-white">TABLA:  {tableName}</p>
+<p class="text-lg">
+    {tableDescription}
+</p>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg my-4">
+    <table class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100">
+        <thead class="text-xs text-white uppercase bg-blue-600 dark:text-white">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Campo
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Tipo de dato
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Descripcion
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            {
+                tableFields.map( field => (
+                    <tr class={field.primaryKey ? "bg-green-500 border-b border-white" : "bg-blue-500 border-b border-blue-400"}>
+                    <th scope="row" class="px-6 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                        {field.nameField}
+                    </th>
+                    <td class="px-6 py-4">
+                        {field.type}
+                    </td>
+                    <td class="px-6 py-4">
+                        {field.fieldDescription}
+                    </td>
+                
+            </tr>
+                ))
+            }
+            
+            
+            
+           
+            
+        </tbody>
+    </table>
+
+    <div class="my-6 px-1 bg-slate-100 space-y-2">
+    <div>
+     <p class="text-lg font-bold dark:text-white">PRIMARY KEY:<span class="text-green-500 text-bold text2x1"> {tablePK}.</span></p>
+    </div>
+    
+    <div class="space-y-0">
+        {
+            tablesFKs.length >= 1 && <p class="text-lg font-bold dark:text-white">FOREINGS KEYS</p>
+        }
+    {
+        tablesFKs.length >= 1 &&
+        (
+            tablesFKs.map( item => (
+            
+            <p class="text-lg"> - Campo: <span class="font-bold"> {item.field}</span> <span class="text-pink-500"> refTabla</span> {item.toTable}.</p>
+            ))
+        )
+       
+    }
+    </div>
+    </div>
+
+       </div>
