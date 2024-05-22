@@ -4,6 +4,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
+export const myRepoURL = '/SQL-Entrega1-GuillermoGuardia'
+
 
 // https://astro.build/config
 export default defineConfig({
