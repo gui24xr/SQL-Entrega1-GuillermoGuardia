@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
 export const myRepoURL = '/SQL-Entrega1-GuillermoGuardia'
+/*-bfggfg*/
 
 
 // https://astro.build/config
