@@ -9,5 +9,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: 'https://gui24xr.github.io',
   integrations: [mdx(), sitemap(), tailwind(), react()],
-  //base: '/'
+  base: '/SQL-Entrega1-GuillermoGuardia'
 });
